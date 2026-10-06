@@ -1,1 +1,33 @@
-"use client";import {BarChart3,Boxes,ReceiptText,Users,WalletCards} from "lucide-react";const cards=[["₹12.8L","Revenue",BarChart3],["8,420 L","Fuel volume",Boxes],["1,284","Receipts",ReceiptText],["2,164","Customers",Users]];export default function OwnerDashboard(){return <main className="min-h-screen bg-[#f5f7f4] text-[#102019]"><header className="border-b border-black/5 bg-white"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5"><div className="flex items-center gap-3"><div className="brand-mark"><WalletCards size={18}/></div><div><strong className="block">FUELIFY</strong><span className="text-xs text-black/40">Station command center</span></div></div><span className="rounded-full bg-[#b7ff4a] px-3 py-1 text-xs font-bold">OWNER</span></div></header><div className="mx-auto max-w-7xl px-5 py-8"><div className="flex flex-wrap items-end justify-between gap-4"><div><span className="text-xs font-bold uppercase tracking-[.16em] text-black/35">Today</span><h1 className="mt-2 text-4xl font-black tracking-tight">Good afternoon.</h1></div><button className="rounded-xl bg-[#102019] px-4 py-3 text-sm font-bold text-white">Add transaction</button></div><div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{cards.map(([v,l,I])=><div key={l as string} className="rounded-3xl border border-black/5 bg-white p-5 shadow-sm"><div className="mb-8 grid h-10 w-10 place-items-center rounded-xl bg-[#b7ff4a55]"><I size={18}/></div><strong className="block text-2xl">{v as string}</strong><span className="text-xs text-black/40">{l as string}</span></div>)}</div><div className="mt-5 grid gap-5 lg:grid-cols-[1.5fr_1fr]"><div className="rounded-3xl border border-black/5 bg-white p-6"><div className="flex justify-between"><div><h2 className="font-bold">Revenue trend</h2><p className="text-xs text-black/35">Last 7 days</p></div><span className="text-sm font-bold text-emerald-600">+18.4%</span></div><div className="mt-8 flex h-48 items-end gap-3">{[42,58,51,76,63,88,96].map((h,i)=><div key={i} className="flex-1 rounded-t-xl bg-[#b7ff4a]" style={{height:h+"%"}}/>)}</div></div><div className="rounded-3xl border border-black/5 bg-[#102019] p-6 text-white"><span className="text-xs uppercase tracking-[.14em] text-white/35">Attention</span><h2 className="mt-3 text-xl font-bold">2 tanks are below reorder level.</h2><p className="mt-2 text-sm leading-6 text-white/45">Review inventory before the next shift to avoid stock-outs.</p><button className="mt-5 rounded-xl bg-white/10 px-4 py-3 text-sm font-bold">Review inventory</button></div></div></div></main>
+"use client";
+
+import {BarChart3, Boxes, ReceiptText, Users, WalletCards} from "lucide-react";
+
+const cards = [
+  ["₹12.8L", "Revenue", BarChart3],
+  ["8,420 L", "Fuel volume", Boxes],
+  ["1,284", "Receipts", ReceiptText],
+  ["2,164", "Customers", Users],
+] as const;
+
+export default function OwnerDashboard() {
+  return (
+    <main className="min-h-screen bg-[#f5f7f4] text-[#102019]">
+      <header className="border-b border-black/5 bg-white">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5">
+          <div className="flex items-center gap-3"><div className="brand-mark"><WalletCards size={18}/></div><div><strong className="block">FUELIFY</strong><span className="text-xs text-black/40">Station command center</span></div></div>
+          <span className="rounded-full bg-[#b7ff4a] px-3 py-1 text-xs font-bold">OWNER</span>
+        </div>
+      </header>
+      <div className="mx-auto max-w-7xl px-5 py-8">
+        <div className="flex flex-wrap items-end justify-between gap-4"><div><span className="text-xs font-bold uppercase tracking-[.16em] text-black/35">Today</span><h1 className="mt-2 text-4xl font-black tracking-tight">Good afternoon.</h1></div><button className="rounded-xl bg-[#102019] px-4 py-3 text-sm font-bold text-white">Add transaction</button></div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {cards.map(([value, label, Icon]) => <div key={label} className="rounded-3xl border border-black/5 bg-white p-5 shadow-sm"><div className="mb-8 grid h-10 w-10 place-items-center rounded-xl bg-[#b7ff4a55]"><Icon size={18}/></div><strong className="block text-2xl">{value}</strong><span className="text-xs text-black/40">{label}</span></div>)}
+        </div>
+        <div className="mt-5 grid gap-5 lg:grid-cols-[1.5fr_1fr]">
+          <div className="rounded-3xl border border-black/5 bg-white p-6"><div className="flex justify-between"><div><h2 className="font-bold">Revenue trend</h2><p className="text-xs text-black/35">Last 7 days</p></div><span className="text-sm font-bold text-emerald-600">+18.4%</span></div><div className="mt-8 flex h-48 items-end gap-3">{[42,58,51,76,63,88,96].map((height, index) => <div key={index} className="flex-1 rounded-t-xl bg-[#b7ff4a]" style={{height: height + "%"}} />)}</div></div>
+          <div className="rounded-3xl border border-black/5 bg-[#102019] p-6 text-white"><span className="text-xs uppercase tracking-[.14em] text-white/35">Attention</span><h2 className="mt-3 text-xl font-bold">2 tanks are below reorder level.</h2><p className="mt-2 text-sm leading-6 text-white/45">Review inventory before the next shift to avoid stock-outs.</p><button className="mt-5 rounded-xl bg-white/10 px-4 py-3 text-sm font-bold">Review inventory</button></div>
+        </div>
+      </div>
+    </main>
+  );
+}

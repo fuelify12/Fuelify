@@ -1,0 +1,3 @@
+-- FUELIFY baseline contract. The connected Supabase project already contains the
+-- normalized operational schema used by the first application build.
+-- Future migrations are additive and should be generated from the live schema.
